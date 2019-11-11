@@ -1,0 +1,91 @@
+﻿@model TestDevJunior.Models.Client
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="razao_social" class="control-label"></label>
+                <input asp-for="razao_social" class="form-control" />
+                <span asp-validation-for="razao_social" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="cnpj" class="control-label"></label>
+            <input asp-for="cnpj" class="form-control" />
+            <span asp-validation-for="cnpj" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="data_fundacao" class="control-label"></label>
+            <input asp-for="data_fundacao" type="date" class="form-control quarentena" id="createdDate" />
+            <span asp-validation-for="data_fundacao" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="capital" class="control-label"></label>
+            <input asp-for="capital" class="form-control capital" id="capitalValue" />
+            <span asp-validation-for="capital" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group aligh-itens">
+            <div class="checkbox">
+                <label>
+                    <input asp-for="quarentena" id="quarentenaInput" disabled="disabled"/> @Html.DisplayNameFor(model => model.quarentena)
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group aligh-itens">
+            <div class="checkbox">
+                <label>
+                    <input asp-for="status_cliente"/> @Html.DisplayNameFor(model => model.status_cliente)
+                </label>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="classificacao" class="control-label"></label>
+            <input asp-for="classificacao" class="form-control" id="classificacaoInput" disabled="disabled"/>
+            <span asp-validation-for="classificacao" class="text-danger"></span>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">  
+        
+        <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TestDevJunior.Models.Client>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.razao_social)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data_fundacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.capital)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.quarentena)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.status_cliente)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.classificacao)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.razao_social)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cnpj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data_fundacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.capital)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.quarentena)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.status_cliente)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.classificacao)
+                    </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-controller="Clients" asp-action="Delete" asp-route-id="@item.id" style="display:none" id="itemDeleted"></a> |
+                    <a onclick="openDelete('@item.id','@item.razao_social','@item.cnpj')">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

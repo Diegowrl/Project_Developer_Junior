@@ -1,0 +1,60 @@
+﻿@model TestDevJunior.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.razao_social)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.razao_social)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.data_fundacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.data_fundacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.capital)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.capital)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.quarentena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.quarentena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.status_cliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.status_cliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.classificacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.classificacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

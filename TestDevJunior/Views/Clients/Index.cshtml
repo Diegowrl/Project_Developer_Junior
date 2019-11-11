@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TestDevJunior.Models.Client>
+
+@{
+    ViewData["Title"] = "ListClient";
+}
+
+<h3>ListClient</h3>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Create New</a>
+</p>
+
+<br /><br />
+<div class="row">
+    <div class="col-md-2">
+        <div class="form-group">
+            <label class="control-label">Razão Social</label>
+            <input type="text" id="inputRazao" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            <label class="control-label">CNPJ</label>
+            <input type="text" id="inputCnpj" class="form-control" />
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="aligh-itens">
+            <input type="checkbox" id="statusClient" />Ativo|Inativo
+        </div>
+    </div>
+    <div class="col-md-2 col-md-offset-2">
+        <div class="form-group aligh-itens">
+            <input type="submit" id="btnSubmitSearch" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+<br /><br />
+
+<div id="resultado">
+    @Html.Partial("_Lista", Model)
+</div>
